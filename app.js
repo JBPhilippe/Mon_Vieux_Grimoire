@@ -23,7 +23,7 @@ app.use(express.json())
 
 
 // HTTP headers => security
-app.use(helmet())
+app.use(helmet({crossOriginResourcePolicy: false,}))
 
 // Sanitize user input => prevents NoSql code injection 
 app.use(mongoSanitize());

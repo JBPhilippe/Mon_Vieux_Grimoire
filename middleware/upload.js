@@ -1,5 +1,6 @@
 const multer = require('multer');
 const sharp = require('sharp');
+sharp.cache(false) //  On Windows, open files are usually protected from being deleted
 const path = require('path');
 const fs = require('fs');
 

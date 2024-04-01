@@ -11,9 +11,9 @@ const booksCtrl = require('../controllers/books')
 router.get('/', booksCtrl.getAllBooks);
 router.get('/bestrating', booksCtrl.getThreeBestRating);
 router.get('/:id', booksCtrl.getOneBook);
-router.post('/', rateLimiter, auth, upload, upload.resizeImage, booksCtrl.createBook);
-router.post('/:id/rating', rateLimiter, auth, booksCtrl.createRating);
-router.put('/:id', rateLimiter, auth, upload, upload.resizeImage, booksCtrl.modifyBook);
-router.delete('/:id', rateLimiter, auth, booksCtrl.deleteBook);
+router.post('/',auth, upload, upload.resizeImage, booksCtrl.createBook);
+router.post('/:id/rating', auth, booksCtrl.createRating);
+router.put('/:id', auth, upload, upload.resizeImage, booksCtrl.modifyBook);
+router.delete('/:id', auth, booksCtrl.deleteBook);
 
 module.exports = router;
